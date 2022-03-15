@@ -1,7 +1,8 @@
 {% extends "notes/base.html" %}
+{% load static %}
 
 {% block content %}
-<img src="notes/img/logo-getit.png">
+<img src="{% static 'notes/img/logo-getit.png' %}" />
 <p>Como o Post-it, mas com outro verbo</p>
 
 <form method="post">
@@ -13,6 +14,10 @@
 </form>
 
 <ul>
-  <li>Nenhuma anotação por enquanto.</li>
+  {% for note in notes %}
+  <li>{{note.title }}
+    <li>{{note.content}}</li>
+  </li>
+  {% endfor %}
 </ul>
 {% endblock %}
