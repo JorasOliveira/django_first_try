@@ -15,9 +15,7 @@
 
 <ul>
   {% for note in notes %}
-  <li>{{note.title }}
-    <li>{{note.content}}</li>
-  </li>
+  <li>{{note.title }} - {{note.content}}</li>
   {% endfor %}
 </ul>
 {% endblock %}
